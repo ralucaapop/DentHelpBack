@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 @SpringBootApplication
 @EnableScheduling
 
-public class DentHelpApplication extends SpringBootServletInitializer {
+public class DentHelpApplication {
 
 	public static void main(String[] args) {
 
