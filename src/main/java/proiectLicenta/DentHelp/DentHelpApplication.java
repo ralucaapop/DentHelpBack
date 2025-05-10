@@ -32,7 +32,7 @@ public class DentHelpApplication extends SpringBootServletInitializer {
 
 		SpringApplication.run(DentHelpApplication.class, args);
 	}
-	@GetMapping
+	@GetMapping("/message")
 	public String hello(){
 		return "Hello";
 	}
