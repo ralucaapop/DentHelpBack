@@ -13,6 +13,8 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>DentHelp</name>
 	<description>proiect lucrare de licenta</description>
+	<packaging>war</packaging>
+
 	<url/>
 	<licenses>
 		<license/>
