@@ -32,7 +32,7 @@ public class DentHelpApplication {
 
 		SpringApplication.run(DentHelpApplication.class, args);
 	}
-	@GetMapping("/message")
+	@GetMapping("message")
 	public String hello(){
 		return "Hello";
 	}
