@@ -24,6 +24,7 @@ public class SecurityConfiguration {
         http
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(authorizeRequests -> authorizeRequests
+                        .requestMatchers("/message").permitAll()
                         .requestMatchers("/api/auth/**").permitAll()
                         .requestMatchers("api/auth/forgot-password/**").permitAll()
                         .requestMatchers("api/in/appointment/saveAppointmentAnamnesis").permitAll()
