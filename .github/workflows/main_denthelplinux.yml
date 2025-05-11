@@ -62,5 +62,6 @@ jobs:
         with:
           app-name: 'DentHelpLinux'
           slot-name: 'Production'
-          package: '*.jar'
+          package: java-app/*.jar
+
           
