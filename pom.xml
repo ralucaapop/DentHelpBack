@@ -13,7 +13,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>DentHelp</name>
 	<description>proiect lucrare de licenta</description>
-
+	<packaging>jar</packaging>
 	<url/>
 	<licenses>
 		<license/>
@@ -124,6 +124,12 @@
 
 	<build>
 		<finalName>app</finalName>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>false</filtering>
+			</resource>
+		</resources>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
@@ -136,9 +142,18 @@
 					</execution>
 				</executions>
 			</plugin>
-
+			<plugin>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>3.3.1</version>
+				<configuration>
+					<encoding>UTF-8</encoding>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
+
+
+
 	<repositories>
 		<repository>
 			<id>spring-snapshots</id>
