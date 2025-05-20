@@ -82,12 +82,13 @@ public class SecurityConfiguration {
                         .requestMatchers("/api/admin/patient/change/kid-to-patient/**").hasAuthority("PATIENT")
                         .anyRequest().authenticated()
                 )
+                /*
                 .sessionManagement(sessionManagement ->
                         sessionManagement.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 )
                 .authenticationProvider(authenticationProvider)
                 .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class);
-
+                */
         return http.build();
     }
 }
