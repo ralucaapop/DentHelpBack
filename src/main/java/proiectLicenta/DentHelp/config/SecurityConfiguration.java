@@ -21,17 +21,18 @@ public class SecurityConfiguration {
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception{
+        /*
         http
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
                         .anyRequest().permitAll()
                 );
-        /*
+        */
         http
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(authorizeRequests -> authorizeRequests
                         .requestMatchers("/message").permitAll()
-                        .requestMatchers("/api/auth/**").permitAll()
+                        .requestMatchers("/api/auth/login").permitAll()
                         .requestMatchers("api/auth/forgot-password/**").permitAll()
                         .requestMatchers("api/in/appointment/saveAppointmentAnamnesis").permitAll()
                         .requestMatchers("api/in/appointment/getAnamnesisAppointment/**").permitAll()
@@ -81,14 +82,13 @@ public class SecurityConfiguration {
                         .requestMatchers("/api/admin/patient/change-radiologist-to-patient/**").permitAll()
                         .requestMatchers("/api/admin/patient/change/kid-to-patient/**").hasAuthority("PATIENT")
                         .anyRequest().authenticated()
-                );
-                /*
+                )
                 .sessionManagement(sessionManagement ->
                         sessionManagement.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 )
                 .authenticationProvider(authenticationProvider)
                 .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class);
-                */
+
         return http.build();
     }
 }
