@@ -13,7 +13,6 @@ import proiectLicenta.DentHelp.utils.ApiResponse;
 import proiectLicenta.DentHelp.utils.AuthenticationResponse;
 
 @RestController
-@CrossOrigin("http://localhost:5173")
 @RequestMapping(path ="/api/auth")
 public class AuthController {
 
