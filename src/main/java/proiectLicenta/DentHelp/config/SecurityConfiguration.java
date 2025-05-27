@@ -33,6 +33,8 @@ public class SecurityConfiguration {
                 .authorizeHttpRequests(authorizeRequests -> authorizeRequests
                         .requestMatchers("/message").permitAll()
                         .requestMatchers("/api/auth/login").permitAll()
+                        .requestMatchers("/api/auth/register").permitAll()
+                        .requestMatchers("/api/auth/changePassword").permitAll()
                         .requestMatchers("api/auth/forgot-password/**").permitAll()
                         .requestMatchers("api/in/appointment/saveAppointmentAnamnesis").permitAll()
                         .requestMatchers("api/in/appointment/getAnamnesisAppointment/**").permitAll()
