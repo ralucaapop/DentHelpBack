@@ -192,6 +192,7 @@ public class AuthServiceImpl implements AuthService {
             patient = optionalPatient.get();
             verificationCodeForgotPasswordService.sendVerificationCode(patient.getEmail());
         }
+        else throw new BadRequestException("Invalid email");
     }
 
 }
