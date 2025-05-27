@@ -44,7 +44,7 @@ public class VerificationServiceImpl implements VerificationService {
         SimpleMailMessage message = new SimpleMailMessage();
         message.setFrom(fromMsg);
         message.setTo(email);
-        message.setSubject("Cod de verificare");
+        message.setSubject("Confirmare adresă de email");
         message.setText("Codul tău de verificare este: " + code);
         mailSender.send(message);
     }
