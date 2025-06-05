@@ -97,7 +97,7 @@ public class ConfirmAppointmentIServiceImpl implements ConfirmAppointmentService
         message.setFrom(fromMsg);
         message.setTo(email);
         message.setSubject("Confirmare programare");
-        message.setText("Buna ziua, multumuim pentru ca ati ales clinica noastra! Va informam că cerea dumneavoasta a fost vizualizata de catre medic, iar programarea va avea loc in data" + text);
+        message.setText("Mulțumuim pentru că ați ales clinica noastră! Vă informăm că cerea dumneavoastă a fost vizualizată de căre medic, iar programarea va avea loc în data " + text);
         mailSender.send(message);
     }
     private void sendRejectEmail(String email, String text) {
@@ -106,10 +106,10 @@ public class ConfirmAppointmentIServiceImpl implements ConfirmAppointmentService
         message.setFrom(fromMsg);
         message.setTo(email);
         message.setSubject("Respingere solicitare programare");
-        message.setText("Buna ziua, multumuim pentru ca ati ales clinica noastră!" +
-                " Va informam cu cerea dumneavoasta a fost vizualizata de catre medic," +
+        message.setText("Mulțumuim pentru că ați ales clinica noastră!" +
+                " Vă informăm că cerea dumneavoastă a fost vizualizată de către medic," +
                 " însă nu există nici un loc disponibil în intervalul pe care l-ați ales." +
-                " Vă sugerăm să faceti o solicitare peentru perioada " + text + " sau să ne contactați telefonic." +
+                " Vă sugerăm să faceti o solicitare pentru perioada " + text + " sau să ne contactați telefonic." +
                 " Vă mulțumim pentru înțelegere!");
         mailSender.send(message);
     }

@@ -61,7 +61,7 @@ public class AuthServiceImpl implements AuthService {
 
 
     public void register(@RequestBody RegisterDto registerDto) {
-        System.out.print(registerDto.getFirstName());
+        System.out.print(registerDto.getCNP());
         if (registerDto.getFirstName() == null || registerDto.getFirstName().isBlank()) {
             throw new BadRequestException("The first name is invalid");
         }
