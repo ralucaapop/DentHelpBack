@@ -14,8 +14,8 @@ import java.time.format.DateTimeFormatter;
 @Service
 public class ReminderService {
 
-    private final AppointmentRepository appointmentRepository; // Repo pentru programări
-    private final EmailService emailService; // Serviciu pentru trimitere email
+    private final AppointmentRepository appointmentRepository;
+    private final EmailService emailService;
 
 
     private static final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
@@ -30,14 +30,14 @@ public class ReminderService {
         this.emailService = emailService;
     }
 
-    @Scheduled(cron = "0 34 16 * * *" , zone = "Europe/Bucharest")
+    @Scheduled(cron = "0 00 14 * * *" , zone = "Europe/Bucharest")
     public void sendReminders() {
         LocalDateTime targetTime = LocalDateTime.now().plusDays(1);
         List<Appointment> appointments = appointmentRepository.findAll();
         for (Appointment appointment : appointments) {
             System.out.print(appointment.getAppointmentId());
             LocalDateTime appointmentDate = parseStringToLocalDateTime(appointment.getStartDateHour());
-            if(appointmentDate.isEqual(targetTime) || appointmentDate.isBefore(targetTime))
+            if (appointmentDate.toLocalDate().isEqual(targetTime.toLocalDate()))
                 emailService.sendReminderEmail(appointment.getPatient().getEmail(), appointment);
         }
     }
